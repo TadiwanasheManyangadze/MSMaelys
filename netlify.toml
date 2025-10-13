@@ -1,0 +1,20 @@
+[build]
+  publish = "."      # publish from repo root (where index.html lives)
+  command = ""       # no build step for static HTML
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+# Optional: redirect root to index (useful if you later convert to SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
