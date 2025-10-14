@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Improved viewport for better adaptability -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>MS Maelys Solutions | Engineering & Construction</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" /> <!-- Added CSS reset for consistency -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <script defer src="script.js"></script>
   </head>
   <body>
@@ -20,28 +20,36 @@
             </svg>
           </div>
           <div>
-            <h1>MS Maelys Solutions</h1>
+            <h1 class="site-title animate-fade">MS Maelys Solutions</h1>
             <p class="tag">Engineering • Construction • Fabrication</p>
           </div>
         </div>
-        <nav class="nav">
+        <nav class="nav desktop-nav">
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
           <a href="#hse">HSE & Quality</a>
           <a href="#contact">Contact</a>
         </nav>
+        <button class="menu-toggle" aria-label="Open menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+      <nav class="nav mobile-nav" id="mobileNav">
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a>
+        <a href="#hse" onclick="closeMenu()">HSE & Quality</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"></button>
     </header>
 
     <main>
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-left">
-            <h2 class="animate-up">
-              Turnkey engineering & construction solutions across Africa
-            </h2>
-            <p class="lead animate-up delay">
-              MS Maelys Solutions Sarl is a multi-disciplinary engineering and construction company specializing in Electrical & Instrumentation, Civil Engineering, Mechanical Engineering, Piping and Steel Fabrication, and Infrastructure Development. We deliver turnkey solutions across industrial, commercial, mining, and public infrastructure projects with a focus on quality, safety, innovation, and client satisfaction.
+            <h2 class="hero-heading animate-slide">Turnkey engineering & construction solutions across Africa</h2>
+            <p class="lead animate-fade">
+              MS Maelys Solutions Sarl is a multi-disciplinary engineering and construction company specializing in Electrical &amp; Instrumentation, Civil Engineering, Mechanical Engineering, Piping and Steel Fabrication, and Infrastructure Development. We deliver turnkey solutions across industrial, commercial, mining, and public infrastructure projects with a focus on quality, safety, innovation, and client satisfaction.
               <br />Our team of qualified engineers, technicians, and skilled artisans ensures that every project is completed on time, within budget, and to the highest international standards.
             </p>
             <div class="cta-row animate-up delay2">
@@ -50,11 +58,7 @@
             </div>
           </div>
           <div class="hero-right animate-float">
-            <img
-              src="assets/hero-illustration.svg"
-              alt="Engineering illustration"
-              loading="lazy"
-            />
+            <img src="assets/hero-illustration.svg" alt="Engineering illustration" loading="lazy" />
           </div>
         </div>
       </section>
@@ -63,28 +67,26 @@
       <section class="vm-section">
         <div class="container">
           <div class="vm-grid">
-            <div class="vm-card">
-              <h4>
-                <svg class="kv-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2a9 9 0 100 18 9 9 0 000-18z" />
+            <div class="vm-card animate-up">
+              <h2 class="section-heading animate-slide">
+                <svg class="gaviscon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent)" />
+                  <text x="12" y="16" text-anchor="middle" font-size="12" fill="#fff" font-family="Segoe UI, Arial" font-weight="bold">V</text>
                 </svg>
                 Vision
-              </h4>
-              <p>
-                To be a leading engineering and construction company in Africa and beyond, delivering sustainable infrastructure and industrial solutions that power progress and innovation.
-              </p>
+              </h2>
+              <p>To be a leading engineering and construction company in Africa and beyond, delivering sustainable infrastructure and industrial solutions that power progress and innovation.</p>
             </div>
 
-            <div class="vm-card">
-              <h4>
-                <svg class="kv-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2a9 9 0 100 18 9 9 0 000-18z" />
+            <div class="vm-card animate-up delay2">
+              <h2 class="section-heading animate-slide">
+                <svg class="gaviscon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent)" />
+                  <text x="12" y="16" text-anchor="middle" font-size="12" fill="#fff" font-family="Segoe UI, Arial" font-weight="bold">M</text>
                 </svg>
                 Mission
-              </h4>
-              <p>
-                To provide reliable, cost-effective and high-quality engineering services through innovation, teamwork, and continuous improvement while maintaining the highest safety and environmental standards.
-              </p>
+              </h2>
+              <p>To provide reliable, cost-effective and high-quality engineering services through innovation, teamwork, and continuous improvement while maintaining the highest safety and environmental standards.</p>
             </div>
           </div>
         </div>
@@ -92,19 +94,12 @@
 
       <section id="services" class="section services">
         <div class="container">
-          <h3 class="section-title">Our Services</h3>
-          <p class="section-sub">
-            We deliver professional engineering services for industrial, commercial, and infrastructure projects.
-          </p>
+          <h2 class="section-heading animate-slide">Our Services</h2>
+          <p class="section-sub">We deliver professional engineering services for industrial, commercial, and infrastructure projects.</p>
 
           <div class="services-grid">
             <article class="service-card animate-up">
-              <img
-                class="card-media"
-                src="assets/instrumentation-and-control.webp"
-                alt="Electrical installation works"
-                loading="lazy"
-              />
+              <img class="card-media" src="assets/instrumentation-and-control.webp" alt="Instrumentation and Control" loading="lazy" />
               <div class="service-body">
                 <h4>Electrical &amp; Instrumentation</h4>
                 <ul>
@@ -116,12 +111,7 @@
             </article>
 
             <article class="service-card animate-up delay2">
-              <img
-                class="card-media"
-                src="assets/civil_engineering.jpg"
-                alt="Civil construction site"
-                loading="lazy"
-              />
+              <img class="card-media" src="assets/civil_engineering.jpg" alt="Civil Engineering" loading="lazy" />
               <div class="service-body">
                 <h4>Civil Engineering</h4>
                 <ul>
@@ -133,12 +123,7 @@
             </article>
 
             <article class="service-card animate-up delay3">
-              <img
-                class="card-media"
-                src="assets/HDPE-pipe-connections.webp"
-                alt="Piping and HDPE works"
-                loading="lazy"
-              />
+              <img class="card-media" src="assets/HDPE-pipe-connections.webp" alt="Piping and HDPE Works" loading="lazy" />
               <div class="service-body">
                 <h4>Piping, Steel &amp; HDPE Works</h4>
                 <ul>
@@ -150,12 +135,7 @@
             </article>
 
             <article class="service-card animate-up delay4">
-              <img
-                class="card-media"
-                src="assets/plant machinery.jpg"
-                alt="Mechanical workshop and plant"
-                loading="lazy"
-              />
+              <img class="card-media" src="assets/plant%20machinery.jpg" alt="Mechanical workshop and plant" loading="lazy" />
               <div class="service-body">
                 <h4>Mechanical Engineering &amp; Plant Hire</h4>
                 <ul>
@@ -171,10 +151,8 @@
 
       <section id="values" class="section values">
         <div class="container">
-          <h3 class="section-title">Core Values</h3>
-          <p class="section-sub">
-            Our guiding principles that shape how we work and deliver value.
-          </p>
+          <h2 class="section-heading animate-slide">Core Values</h2>
+          <p class="section-sub">Our guiding principles that shape how we work and deliver value.</p>
 
           <div class="values-grid">
             <div class="value-card animate-up">
@@ -246,7 +224,7 @@
 
       <section id="projects" class="section projects">
         <div class="container">
-          <h3 class="section-title">Key Clients & Projects</h3>
+          <h2 class="section-heading animate-slide">Key Clients & Projects</h2>
           <p class="section-sub">
             We work with industry leaders across mining, energy, government, and private development.
           </p>
@@ -273,7 +251,7 @@
 
       <section id="hse" class="section hse">
         <div class="container">
-          <h3 class="section-title">Health, Safety & Quality</h3>
+          <h2 class="section-heading animate-slide">Health, Safety & Quality</h2>
           <div class="hse-grid">
             <div class="hse-card animate-up">
               <h4>
@@ -314,38 +292,25 @@
           <div class="contact-card animate-up">
             <h3>Contact</h3>
             <p><strong>Director:</strong> Richard Mutombo</p>
-            <p>
-              <strong>Email:</strong>
-              <a href="mailto:maelyssolutions@gmail.com">maelyssolutions@gmail.com</a>
-            </p>
-            <p>
-              <strong>Phone:</strong>
-              <a href="tel:+243970018638">+243 97 001 8638</a>
-            </p>
-            <p>
-              MS Maelys Solutions Sarl — Turnkey engineering & construction across industrial, commercial, and public infrastructure projects.
-            </p>
-            <a
-              class="btn"
-              href="https://wa.me/243970018638?text=Hello%20MS%20Maelys%20Solutions"
-              target="_blank"
-              rel="noopener"
-            >Chat on WhatsApp</a>
+            <p><strong>Email:</strong> <a href="mailto:maelyssolutions@gmail.com">maelyssolutions@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+243970018638">+243 97 001 8638</a></p>
+            <p>MS Maelys Solutions Sarl — Turnkey engineering &amp; construction across industrial, commercial, and public infrastructure projects.</p>
+            <a class="btn" href="https://wa.me/243970018638?text=Hello%20MS%20Maelys%20Solutions" target="_blank" rel="noopener">Chat on WhatsApp</a>
           </div>
-
           <div class="contact-form animate-up delay2">
             <h4>Send an inquiry</h4>
             <form id="inquiryForm" onsubmit="submitForm(event)">
-              <label>Name<input type="text" id="name" required /></label>
-              <label>Email<input type="email" id="email" required /></label>
-              <label>Message<textarea id="message" rows="4" required></textarea></label>
+              <label for="name">Name</label>
+              <input type="text" id="name" required class="input-pro" />
+              <label for="email">Email</label>
+              <input type="email" id="email" required class="input-pro" />
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" required class="input-pro"></textarea>
               <div class="form-row">
                 <button class="btn" type="submit">Send</button>
                 <button class="btn btn-outline" type="reset">Reset</button>
               </div>
-              <p class="muted">
-                Form demo. Submission opens WhatsApp link prefilled for convenience.
-              </p>
+              <p class="muted"></p>
             </form>
           </div>
         </div>
@@ -377,14 +342,37 @@
               <a href="mailto:maelyssolutions@gmail.com">maelyssolutions@gmail.com</a>
             </p>
             <p><a href="tel:+243970018638">+243 97 001 8638</a></p>
-            <p>
-              <a
-                class="btn btn-outline"
-                href="https://wa.me/243970018638?text=Hello%20MS%20Maelys%20Solutions"
-                target="_blank"
-                rel="noopener"
-              >Chat on WhatsApp</a>
-            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script>
+      // Responsive menu
+      function toggleMenu() {
+        document.getElementById('mobileNav').classList.toggle('open');
+      }
+      function closeMenu() {
+        document.getElementById('mobileNav').classList.remove('open');
+      }
+      // Theme toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.onclick = function() {
+          document.body.classList.toggle('dark-theme');
+          localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        };
+        if(localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-theme');
+        }
+      });
+    </script>
+  </body>
+</html>
+      
+    </script>
+  </body>
+</html>
+           
           </div>
         </div>
       </footer>
@@ -407,28 +395,15 @@
               Click the button below to open WhatsApp (web or app) with a
               prefilled message.
             </p>
-            <a
-              class="btn"
-              id="openWaLink"
-              href="https://wa.me/243970018638?text=Hello%20MS%20Maelys%20Solutions"
-              target="_blank"
-              rel="noopener"
-              >Open WhatsApp</a
-            >
+           
           </div>
         </div>
       </div>
     </main>
   </body>
 </html>
-            <a
-              class="btn"
-              id="openWaLink"
-              href="https://wa.me/243970018638?text=Hello%20MS%20Maelys%20Solutions"
-              target="_blank"
-              rel="noopener"
-              >Open WhatsApp</a
-            >
+            
+        
           </div>
         </div>
       </div>

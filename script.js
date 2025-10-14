@@ -29,3 +29,25 @@ document.addEventListener("DOMContentLoaded", function () {
     card.classList.add("animate-up"); // Add animation class
   });
 });
+
+// Responsive menu
+function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("open");
+}
+function closeMenu() {
+  document.getElementById("mobileNav").classList.remove("open");
+}
+// Theme toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark-theme") ? "dark" : "light"
+    );
+  };
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-theme");
+  }
+});
