@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://msmaelyssolutions.netlify.app/sitemap.xml
+
