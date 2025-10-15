@@ -33,8 +33,8 @@ body {
   align-items: center;
 }
 .logo {
-  width: 56px;
-  height: 56px;
+  width: 150px;
+  height: 150px;
   fill: var(--accent);
   opacity: 0.95;
 }
@@ -711,6 +711,23 @@ body.dark-theme .btn-outline {
 body.dark-theme .nav a,
 body.dark-theme .mobile-nav a {
   color: #e6e9ef;
+}
+/* Dark theme navigation styles */
+body.dark-theme .nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+body.dark-theme .mobile-nav {
+  background: #1b2232;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+body.dark-theme .mobile-nav a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.dark-theme .mobile-nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+body.dark-theme .mobile-nav a:last-child {
+  border-bottom: none;
 }
 body.dark-theme .project {
   background: #23293a;
